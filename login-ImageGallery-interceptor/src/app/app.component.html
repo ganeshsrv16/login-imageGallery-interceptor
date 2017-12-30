@@ -1,0 +1,40 @@
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/">Home</a>
+        </li>
+        <li role="presentation"
+            routerLinkActive="active">
+          <a routerLink="servers">Students</a>
+        </li>
+        <li role="presentation"
+        routerLinkActive="active">
+      <a routerLink="images">Gallery</a>
+    </li>
+    <li role="presentation"
+    routerLinkActive="active">
+  <a routerLink="persons">Persons</a>
+</li>
+        
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div> 
+<!-- <h3 align="center" style="font-size:50px">Gallery</h3>
+<div style="font-size:20px; position:relative;left:600px; top:100px">
+  <input type="num" placeholder="Total number of pictures" [(ngModel)]="initial" />
+<button type="button" class="btn btn-success" (click)="up.update()">Click</button>
+</div>
+
+
+ <app-s #up [value]="initial" ></app-s>  -->
+<!-- <app-s2></app-s2> -->

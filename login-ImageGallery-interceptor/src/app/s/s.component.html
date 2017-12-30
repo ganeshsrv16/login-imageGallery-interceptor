@@ -1,0 +1,40 @@
+
+  <p align="center" >Image Gallery</p>
+<br>
+<br>
+
+
+<div align="center" style="font-size:20px">
+    <input type="num" placeholder="Number of entries" [(ngModel)]="value" />
+    <button (click)="update()">clickme</button>
+</div>
+
+<button  style="position:relative;left:0px; top:50px" class="btn btn-info btn-lg" (click)="inc()">
+    <span class="glyphicon glyphicon-plus"></span>
+</button>
+  
+ <button   style="position:relative; left:500px; top:50px" class="btn btn-info btn-lg" (click)="dec()">
+    <span class="glyphicon glyphicon-minus"></span>
+ </button>
+ <br>
+ <br><br>
+ <br><br>
+ <br>
+ <table>
+    <tr>
+<div *ngFor="let image of imgList | paginate: {itemsPerPage:jo, currentPage:p}" style="display: inline-block; position:relative;left:100px; top:100px" > 
+  <td> <img src={{image.thumbnailUrl}} (mouseenter)="cImage(image.url)"/></td>
+</div> 
+</tr>
+  </table>
+
+<pagination-controls style="font-size:30px; position:relative;left:500px; top:200px" (pageChange)="p = $event"></pagination-controls>
+
+  
+
+  <div style="position:relative;left:500px; top:300px">
+    <img src={{st}}/>
+  </div>
+
+
+

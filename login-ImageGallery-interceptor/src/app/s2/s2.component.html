@@ -1,0 +1,51 @@
+  <p align="center" >Person Details</p>
+<br>
+<br>
+<div align="center" style="font-size:20px">
+        <input type="num" placeholder="Number of entries" [(ngModel)]="val" />
+        <button (click)="update()">clickme</button>
+</div>
+<br>
+<br>
+<br>
+
+
+<button  style="position:relative;left:0px; top:50px" class="btn btn-info btn-lg" (click)="inc()">
+        <span class="glyphicon glyphicon-plus"></span>
+    </button>
+      
+     <button   style="position:relative; left:500px; top:50px" class="btn btn-info btn-lg" (click)="dec()">
+        <span class="glyphicon glyphicon-minus"></span>
+     </button>
+
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     
+<div  style="font-size:30px">
+<ul>
+<li *ngFor="let name of nameList| paginate: {itemsPerPage:jo, currentPage:p}"   > 
+    <a  (mouseenter) ="cdetails(name.postId,name.name,name.body)">   {{name.email}}</a>
+</li>
+</ul>
+</div>
+<div style="font-size:20px; position:relative;left:800px;">
+    <table border="2">
+     <tr>
+         <th>Name:</th>
+         <td>{{pname}}</td>
+     </tr>
+     <tr>
+            <th>Id:</th>
+            <td>{{pid}}</td>
+        </tr>
+        <tr>
+                <th>Body:</th>
+                <td>{{pbody}}</td>
+            </tr>
+    </table>
+</div>
+<pagination-controls style="font-size:30px; position:relative;left:500px; top:200px" (pageChange)="p = $event"></pagination-controls>

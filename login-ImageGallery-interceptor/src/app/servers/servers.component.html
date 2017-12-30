@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div>
+      <p align="center" >Students Data</p>
+        <br>
+        <br>
+      
+        <p id="op">Name:</p><input type="text" [(ngModel)]="queryString" id="search" placeholder="Type name to search">
+      <br>
+      <br>
+      <br>
+      
+         
+            <table id="customers" width= "1200" align="center" border="2"  cellspacing="2">
+              <tr class="bg-warning">
+                <th>Job ID</th>
+                <th>Name</th>
+                <th>Favorite Language</th>
+                <th>Branch</th>
+                <th>Percentage</th>
+                <th>State</th>
+                <th>Result</th>
+              </tr>
+              <tr *ngFor="let n of servers |filter: queryString">
+                
+                  <td>{{n.id}}</td>
+                  <a  [routerLink]="['/servers',n.id]" ><td>{{n.name|uppercase}}</td></a>
+                  <td>{{n.favlang|uppercase}}</td>
+                  <td>{{n.branch|uppercase}}</td>
+                  <td>{{n.per}}</td>
+                  <td>{{n.state|uppercase}}</td>
+                  <td><button class="btn btn-outline-dark" [appHigh]="hey(n.per)" (click)="get(n.name,n.per)">Report</button></td>
+                </tr>
+              </table>
+         
+      
+      </div>
+      </div>
+      </div>
+      </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+  <div class="kiu" >
+    <router-outlet></router-outlet>
+    <!--<button class="btn btn-primary" (click)="onReload()">Reload Page</button>-->
+    <!--<app-edit-server></app-edit-server>-->
+    <!--<hr>-->
+    <!--&lt;!&ndash;<app-server></app-server>&ndash;&gt;-->
+  </div>
+
+
